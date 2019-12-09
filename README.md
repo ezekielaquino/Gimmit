@@ -4,7 +4,7 @@
 
 ## What it does
 
-Gimmit is `not` a full CLI; what it is is an opinionated terminal prompt to hopefully make mundane commit messages a bit more joyful (or more meaningful, if you want).
+`Gimmit` is nothing more than tiny little opinionated terminal prompt to hopefully make mundane commit messages a bit more joyful (or more meaningful, if you want).
 
 You'd still use your regular `git` commands, you can just use `gimmit` instead of your everyday `git commit`.
 
