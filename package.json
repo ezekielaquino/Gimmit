@@ -1,0 +1,31 @@
+{
+  "name": "gimmit",
+  "version": "0.0.1",
+  "description": "Git commit but cuter",
+  "main": "gimmit.js",
+  "bin": {
+    "gitt": "cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ezekielaquino/Gimmit.git"
+  },
+  "keywords": [
+    "git",
+    "commit"
+  ],
+  "author": "Ezekiel Aquino <@ezekielaquino>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ezekielaquino/Gimmit/issues"
+  },
+  "homepage": "https://github.com/ezekielaquino/Gimmit#readme",
+  "dependencies": {
+    "enquirer": "^2.3.2",
+    "random": "^2.1.1",
+    "simple-git": "^1.128.0"
+  }
+}
