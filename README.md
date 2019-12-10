@@ -21,5 +21,10 @@ Simply install globally via `npm instal -g gimmit` or `yarn global add gimmit`.
 
 Once installed, You can now simply type `gimmit` when you want to make a commit to your repo and just follow the prompts.
 
+## Plans
+
+- Override configuration and customize the selects via a .gimmitconfig
+- Add the possibility for validations for commit messages
+
 ### P.S.
 Peace and love 💖
