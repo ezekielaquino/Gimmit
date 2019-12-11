@@ -1,6 +1,6 @@
 {
   "name": "gimmit",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Git commit but cuter",
   "main": "gimmit.js",
   "bin": {
@@ -26,7 +26,6 @@
   "dependencies": {
     "enquirer": "^2.3.2",
     "fs": "^0.0.1-security",
-    "random": "^2.1.1",
     "simple-git": "^1.128.0"
   }
 }

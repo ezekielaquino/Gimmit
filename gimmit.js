@@ -1,7 +1,6 @@
 const Git = require('simple-git')();
 const { Select, Input } = require('enquirer');
 const config = require('./config');
-const random = require('random');
 const fs = require('fs');
 
 let options = [
@@ -36,6 +35,11 @@ try {
 
       emojiPool = customConfig.emojiPool;
     }
+  } else {
+    options = [
+      ...options,
+      ...config.options,
+    ];
   }
 } catch (err) {
   console.error(err);
@@ -50,7 +54,7 @@ const promptSelectType = new Select({
 });
 
 const getRandomEmoji = () => {
-  const randIndex = random.int(0, config.emojiPool.length);
+  const randIndex = Math.floor(Math.random() * config.emojiPool.length);
   return emojiPool[randIndex];
 };
 
