@@ -17,14 +17,61 @@ The emojis are curated by yours truly. There is a "Random" commit that selects f
 
 ## How to install
 
-Simply install globally via `npm instal -g gimmit` or `yarn global add gimmit`.
+Assuming you already have `git` cli installed on your machine: simply install globally via `npm instal -g gimmit` or `yarn global add gimmit`.
 
 Once installed, You can now simply type `gimmit` when you want to make a commit to your repo and just follow the prompts.
 
+## Custom configuration
+
+Just make a `.gimmitrc.json` in your root directory.
+
+You can pass in your own options for both `commit flavors` and the `pool` of emoji the random function selects from.
+
+*Note:* The random option is always the first option even though you pass in your own set.
+
+```json
+// .gimmitrc.json
+{
+  "options": [
+    {
+      "label": "Custom option",
+      "emoji": "🦄"
+    }
+  ],
+  "emojiPool": [
+    "🐙",
+    "🌻"
+  ]
+}
+```
+
+You can have fun with this! You can replace the `emoji` with anything: say, you want to have consistent "labeled" commits in your team, or just for yourself, then you can do something like:
+
+```json
+// .gimmitrc.json
+{
+  "options": [
+    {
+      "label": "Visual Design",
+      "emoji": "[VISUAL]"
+    }, {
+      "label": "Final final",
+      "emoji": "[FINALFINALv3]",
+    }
+  ],
+  "emojiPool": [
+    "[I ATE BANANA]",
+    "[GIMME BURGER]"
+  ]
+}
+```
+
+Have fun!
+
 ## Plans
 
-- Override configuration and customize the selects via a .gimmitconfig
-- Add the possibility for validations for commit messages
+- [x] Override configuration and customize the selects via a .gimmitconfig
+- [ ] Add the possibility for validations for commit messages
 
 ### P.S.
 Peace and love 💖

@@ -1,9 +1,5 @@
 exports.options = [
   {
-    label: 'Random',
-    emoji: '🔀',
-  },
-  {
     label: 'New beginnings',
     emoji: '🌈',
   },
