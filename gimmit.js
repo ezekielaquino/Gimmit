@@ -19,13 +19,7 @@ try {
       options = [
         ...options,
         ...customConfig.options,
-      ].map((option, index) => {
-        const key = index === 0 ? 'Key ' : '';
-        return {
-          ...option,
-          label: `${option.label} [${key}${index}]`,
-        };
-      });
+      ];
     }
 
     if (customConfig.emojiPool) {
@@ -41,6 +35,14 @@ try {
       ...config.options,
     ];
   }
+
+  options = options.map((option, index) => {
+    const key = index === 0 ? 'Key ' : '';
+    return {
+      ...option,
+      label: `${option.label} [${key}${index}]`,
+    };
+  });
 } catch (err) {
   console.error(err);
 }
