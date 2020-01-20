@@ -1,5 +1,5 @@
-const Git = require('simple-git')();
-const { Select, Input } = require('enquirer');
+const Git = require('simple-git/promise')();
+const { Select, Input, Confirm } = require('enquirer');
 const config = require('./config');
 const fs = require('fs');
 
@@ -55,6 +55,11 @@ const promptSelectType = new Select({
   }),
 });
 
+const promptPushToGit = new Confirm({
+  name: 'question',
+  message: 'Would you like to push to remote (current branch)?',
+});
+
 const getRandomEmoji = () => {
   const randIndex = Math.floor(Math.random() * config.emojiPool.length);
   return emojiPool[randIndex];
@@ -74,7 +79,25 @@ promptSelectType.run()
       .run()
       .then(message => {
         Git.commit(`${emoji} ${message}`);
-        console.log('✅ Success! You can now git push!');
+
+        promptPushToGit.run()
+          .then(isPush => {
+            if (isPush) {
+              console.log('📡 Pushing to remote...');
+
+              Git.push('origin', 'HEAD')
+                .then(() => {
+                  console.log('✅ Succesfully pushed to remote!');
+                })
+                .catch(() => {
+                  console.log('👎 Push to remote failed.');
+                });
+              
+            } else {
+              console.log('✅ Commit success!');
+            }
+          })
+          .catch(onCancel);
       })
       .catch(onCancel);
   })

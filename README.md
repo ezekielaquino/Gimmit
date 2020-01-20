@@ -17,9 +17,9 @@ The emojis are curated by yours truly. There is a "Random" commit that selects f
 
 ## How to install
 
-Assuming you already have `git` cli installed on your machine: simply install globally via `npm instal -g gimmit` or `yarn global add gimmit`.
+Assuming you already have `git` cli installed on your machine and you've [setup](https://kbroman.org/github_tutorial/pages/first_time.html) authentication etc. then you can simply install `Gimmit` globally via `npm install -g gimmit` or `yarn global add gimmit`. 
 
-Once installed, You can now simply type `gimmit` when you want to make a commit to your repo and just follow the prompts.
+Once installed, You can now simply type `gimmit` into a terminal window when you want to make a commit to your repo and just follow the prompts.
 
 ## Custom configuration
 
@@ -71,6 +71,7 @@ Have fun!
 ## Plans
 
 - [x] Override configuration and customize the selects via a .gimmitconfig
+- [x] Adds prompt to push to remote
 - [ ] Add the possibility for validations for commit messages
 
 ### P.S.
