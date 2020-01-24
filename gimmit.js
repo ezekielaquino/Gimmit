@@ -2,6 +2,7 @@ const Git = require('simple-git/promise')();
 const { Select, Input, Confirm } = require('enquirer');
 const config = require('./config');
 const fs = require('fs');
+const ora = require('ora');
 
 let options = [
   {
@@ -83,14 +84,14 @@ promptSelectType.run()
         promptPushToGit.run()
           .then(isPush => {
             if (isPush) {
-              console.log('📡 Pushing to remote...');
+              const spinner = ora('Pushing to remote').start();
 
               Git.push('origin', 'HEAD')
                 .then(() => {
-                  console.log('✅ Succesfully pushed to remote!');
+                  spinner.succeed('Succesfully pushed to remote!');
                 })
                 .catch(() => {
-                  console.log('👎 Push to remote failed.');
+                  spinner.fail('👎 Push to remote failed.');
                 });
               
             } else {
