@@ -27,6 +27,6 @@
     "enquirer": "^2.3.2",
     "fs": "^0.0.1-security",
     "ora": "^4.0.3",
-    "simple-git": "^1.128.0"
+    "simple-git": "^3.15.0"
   }
 }
